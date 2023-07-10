@@ -116,11 +116,23 @@ footer {
   box-shadow: 0 4px 8px rgba(247, 244, 244, 0.1);
 }
 
-.skills {
+.skills-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 2em;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+
+  grid-gap: 1em;
+  width: 75%;
+
   margin-bottom: 2em;
 }
 
@@ -130,6 +142,9 @@ footer {
   text-align: center;
 }
 
+.mongo {
+  background-color: #f1f1f1;
+}
 .projects {
   display: grid;
   width: 100%;
@@ -206,9 +221,66 @@ summary:hover {
   color: lightseagreen;
   cursor: pointer;
 }
+
+.contact {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.contact-nav {
+  position: absolute;
+  background-color: #333;
+  padding: 5px;
+  border-radius: 10px;
+  top: 20px;
+  right: 20px;
+}
 /* Media queries for responsiveness */
 @media (max-width: 768px) {
   .container {
     padding: 0 5vw;
+  }
+
+  .skills {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bio {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bio img {
+    margin-bottom: 1em;
+  }
+
+  .courses {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .projects {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .work-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .work {
+    width: 100%;
+  }
+
+  .contact {
+    margin-bottom: 2em;
+  }
+
+  .contact-nav {
+    top: 2px;
+    right: 2px;
+    font-size: small;
+    margin-bottom: 1em;
   }
 }
